@@ -28,7 +28,7 @@ body{
 .background{
     display: flex;
     align-items: center;
-    background-image: url(imgs/Fondo.svg);
+    background-image: url(../../imgs/Fondo.svg);
     background-repeat: no-repeat;
 }
 
