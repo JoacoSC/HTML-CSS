@@ -1,4 +1,4 @@
-@import "fonts/Metropolis/stylesheet.css";
+@import "../../fonts/Metropolis/stylesheet.css";
 
 *{
     box-sizing: border-box;
@@ -230,7 +230,7 @@ li:first-child{
 .phone-code::before{
     height: 30px;
     width: 99px;
-    background: url(imgs/phone-code.svg);
+    background: url(../../imgs/phone-code.svg);
     position: absolute;
     display: block;
     content: '';
