@@ -13,6 +13,12 @@
 
     --animation-curve: cubic-bezier(0.34, 1.36, 0.2, 1);
 
+    --nutri-icon: url(../../imgs/auth/login/nutritionist_icon.svg);
+    --nutri-grey-icon: url(../../imgs/auth/login/nutritionist_icon_grey.svg);
+    
+    --patient-icon: url(../../imgs/auth/login/patient_icon.svg);
+    --patient-grey-icon: url(../../imgs/auth/login/patient_icon_grey.svg);
+
 }
 
 body{
@@ -192,7 +198,29 @@ li:first-child{
     left: 4rem;
     top: 1.6rem;
     opacity: 1;
-    color: black;
+    color: rgb(137, 137, 137);
+}
+
+.form-switch-item-icon{
+    position: relative;
+}
+
+.form-switch-item-icon::before{
+    content: var(--nutri-grey-icon);
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 1rem;
+    left: 1.8rem;
+}
+
+.form-switch-item-icon::after{
+    content: var(--patient-grey-icon);
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 1.2rem;
+    right: 10rem;
 }
 
 .form-switch-item::after{
@@ -204,7 +232,7 @@ li:first-child{
     right: 3rem;
     top: 1.6rem;
     opacity: 1;
-    color: black;
+    color: rgb(137, 137, 137);
 }
 
 .switch-container{
@@ -231,11 +259,11 @@ li:first-child{
     width: 45%;
     height: 2.7rem;
     border-radius: 10px;
-    background: #edf4ff;
+    background: #f4f8ff;
     position: absolute;
     top: .7rem;
     left: .7rem;
-    z-index: 99;
+    z-index: 50;
     cursor: pointer;
 }
 
@@ -245,9 +273,18 @@ li:first-child{
     font-size: 1rem;
     content: "Soy nutricionista";
     position: absolute;
-    left: 3rem;
-    top: 1rem;
+    right: 1rem;
+    top: 0.9rem;
     color: black;
+}
+
+.label-icon::before{
+    content: var(--nutri-icon);
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 0.5rem;
+    left: 1.3rem;
 }
 
 .switch-container label::after{
@@ -256,11 +293,32 @@ li:first-child{
     font-size: 1em;
     content: "Soy paciente";
     position: absolute;
-    left: 1.1rem;
-    top: .5rem;
+    right: 1.6rem;
+    top: 0.9rem;
     opacity: 0;
-    color: var(--clr-graymed);
+    color: black;
 }
+
+.label-icon::before{
+    content: var(--nutri-icon);
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 0.5rem;
+    left: 1.3rem;
+}
+
+.label-icon::after{
+    content: var(--patient-icon);
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 0.5rem;
+    left: 1.3rem;
+    opacity: 0;
+}
+
+/* TODO: Cambiar opacidad de los iconos */
 
 #switch:checked ~ label::before{
     opacity: 0;
