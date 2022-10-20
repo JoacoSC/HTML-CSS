@@ -6,17 +6,19 @@
 
 :root{
     font-size: 16px;
+    --clr-graylight: #cfd8dc;
+    --clr-graymed: #90a4ae;
+
+    --radius: 10em;
+
+    --animation-curve: cubic-bezier(0.34, 1.36, 0.2, 1);
+
 }
 
 body{
     margin:0;
     font-family: "Metropolis", sans-serif;
 
-}
-
-.font {
-    font-family: "Metropolis";
-    font-weight: bold;
 }
 
 .wrapper-main{
@@ -80,7 +82,7 @@ li:first-child{
     margin-left: 3rem;
     margin-right: 3rem;
     display: grid;
-    grid-template-rows: repeat(10, 4rem);
+    grid-template-rows: repeat(4, 5rem);
     row-gap: 1rem;
 }
 
@@ -96,23 +98,6 @@ li:first-child{
     margin-top: .5rem;
 }
 
-.w-50{
-    width: 50%;
-}
-
-.form-group{
-    display: flex;
-    flex-direction: row;
-}
-
-.pr-8{
-    padding-right: .8rem;
-}
-
-.pl-8{
-    padding-left: .8rem;
-}
-
 .form-btn{
     margin-top: 2rem;
     display: flex;
@@ -120,32 +105,6 @@ li:first-child{
 }
 
 .btn-register{    
-    background-color: #a320d3;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 25px;
-    height: 3rem;
-    font-family: "Metropolis", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    box-shadow: 1px 0px 6px 1px rgba(233,238,253,0.75);
-    transition: 500ms ease all;
-}
-
-.btn-register:hover{
-    transform:scale(0.98);
-    background-color: #700b95;
-}
-
-.btn-register:focus{
-    outline: none;
-    border: 1px solid rgba(163,32,211, 1);
-}
-
-.btn-login{
     background-color: rgb(255, 255, 255);
     border: none;
     color: black;
@@ -162,9 +121,35 @@ li:first-child{
     transition: 500ms ease all;
 }
 
-.btn-login:hover{
+.btn-register:hover{
     background-color: #fbfbfb;
     transform:scale(0.97);
+}
+
+.btn-register:focus{
+    outline: none;
+    border: 1px solid rgba(163,32,211, 1);
+}
+
+.btn-login{
+    background-color: #a320d3;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 25px;
+    height: 4rem;
+    font-family: "Metropolis", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    box-shadow: 1px 0px 6px 1px rgba(233,238,253,0.75);
+    transition: 500ms ease all;
+}
+
+.btn-login:hover{
+    transform:scale(0.98);
+    background-color: #700b95;
 }
 
 .btn-login:focus{
@@ -191,53 +176,115 @@ li:first-child{
     border: 1px solid rgba(163,32,211, 1);
 }
 
-.input-date{
-
-    padding-right: 0.7rem;
-    box-shadow: 1px 0px 6px 1px rgba(233,238,253,0.75);
-}
-
-.select-style{
-    
-    outline: 0;
-    box-shadow: none;
-    border: 0;
-    height: 75px;
-    font-family: "Metropolis", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    padding-left: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 1px 0px 6px 1px rgba(233,238,253,0.75);
-    border: 1px solid rgba(0, 0, 0, 0);
-    transition: 150ms all ease-in;
-}
-
-.select-style:focus{
-    outline: none;
-    border: 1px solid rgba(163,32,211, 1);
-}
-
-.phone-code{
+.form-switch-item{
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
     position: relative;
 }
 
-.phone-code-padding{
-    padding-left: 7.5rem;
-}
-
-.phone-code::before{
-    height: 30px;
-    width: 99px;
-    background: url(../../imgs/phone-code.svg);
+.form-switch-item::before{
+    font-family: "Metropolis", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    content: "Soy nutricionista";
     position: absolute;
-    display: block;
-    content: '';
-    top: 2.5rem;
-    left: 0.7rem;
+    left: 4rem;
+    top: 1.6rem;
+    opacity: 1;
+    color: black;
 }
 
+.form-switch-item::after{
+    font-family: "Metropolis", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    content: "Soy paciente";
+    position: absolute;
+    right: 3rem;
+    top: 1.6rem;
+    opacity: 1;
+    color: black;
+}
+
+.switch-container{
+    display: flex;
+    flex-direction: column;
+    height: 4rem;
+    border-radius: 10px;
+    background: white;
+    
+}
+
+/* .switch-color{
+    width: 9rem;
+    height: 3.4rem;
+    left: 0.5rem;
+    top: 0.4rem;
+    background: var(--clr-graylight);
+    border-radius: var(--radius);
+    position: absolute;
+    transition: all 500ms var(--animation-curve);
+} */
+
+.switch-container label{
+    width: 45%;
+    height: 2.7rem;
+    border-radius: 10px;
+    background: #edf4ff;
+    position: absolute;
+    top: .7rem;
+    left: .7rem;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.switch-container label::before{
+    font-family: "Metropolis", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    content: "Soy nutricionista";
+    position: absolute;
+    left: 3rem;
+    top: 1rem;
+    color: black;
+}
+
+.switch-container label::after{
+    font-family: "Metropolis", sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    content: "Soy paciente";
+    position: absolute;
+    left: 1.1rem;
+    top: .5rem;
+    opacity: 0;
+    color: var(--clr-graymed);
+}
+
+#switch:checked ~ label::before{
+    opacity: 0;
+}
+
+#switch:checked ~ label::after{
+    opacity: 1;
+}
+
+#switch:checked ~ label{
+    transform: translateX(14rem);
+}
+
+/* #switch:checked ~ .switch-color{
+    background: #00e676;
+} */
+
+#switch ~ label{
+    transition: all 1s var(--animation-curve);
+}
+
+.switch-container input{
+    display: none;
+}
 
 @media screen and (max-width: 991.98px)  {
     
