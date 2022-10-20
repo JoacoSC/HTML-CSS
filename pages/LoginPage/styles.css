@@ -13,11 +13,13 @@
 
     --animation-curve: cubic-bezier(0.34, 1.36, 0.2, 1);
 
-    --nutri-icon: url(../../imgs/auth/login/nutritionist_icon.svg);
+    /* --nutri-icon: url(../../imgs/auth/login/nutritionist_icon.svg); */
     --nutri-grey-icon: url(../../imgs/auth/login/nutritionist_icon_grey.svg);
+    --nutri-icon-text: url(../../imgs/auth/login/nutritionist_text_and_icon.svg);
     
-    --patient-icon: url(../../imgs/auth/login/patient_icon.svg);
+    /* --patient-icon: url(../../imgs/auth/login/patient_icon.svg); */
     --patient-grey-icon: url(../../imgs/auth/login/patient_icon_grey.svg);
+    --patient-icon-text: url(../../imgs/auth/login/patient_text_and_icon.svg);
 
 }
 
@@ -271,54 +273,27 @@ li:first-child{
     font-family: "Metropolis", sans-serif;
     font-weight: 500;
     font-size: 1rem;
-    content: "Soy nutricionista";
+    content: var(--nutri-icon-text);
     position: absolute;
-    right: 1rem;
-    top: 0.9rem;
+    left: 0.5rem;
+    top: 0.5rem;
     color: black;
+    transition: all 1s var(--animation-curve);
 }
 
-.label-icon::before{
-    content: var(--nutri-icon);
-    width: 26px;
-    height: 26px;
-    position: absolute;
-    top: 0.5rem;
-    left: 1.3rem;
-}
 
 .switch-container label::after{
     font-family: "Metropolis", sans-serif;
     font-weight: 500;
     font-size: 1em;
-    content: "Soy paciente";
+    content: var(--patient-icon-text);
     position: absolute;
-    right: 1.6rem;
-    top: 0.9rem;
+    left: 2rem;
+    top: 0.7rem;
     opacity: 0;
     color: black;
+    transition: all 1s var(--animation-curve);
 }
-
-.label-icon::before{
-    content: var(--nutri-icon);
-    width: 26px;
-    height: 26px;
-    position: absolute;
-    top: 0.5rem;
-    left: 1.3rem;
-}
-
-.label-icon::after{
-    content: var(--patient-icon);
-    width: 26px;
-    height: 26px;
-    position: absolute;
-    top: 0.5rem;
-    left: 1.3rem;
-    opacity: 0;
-}
-
-/* TODO: Cambiar opacidad de los iconos */
 
 #switch:checked ~ label::before{
     opacity: 0;
@@ -337,7 +312,7 @@ li:first-child{
 } */
 
 #switch ~ label{
-    transition: all 1s var(--animation-curve);
+    transition: all 700ms var(--animation-curve);
 }
 
 .switch-container input{
