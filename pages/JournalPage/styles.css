@@ -1,0 +1,118 @@
+@import "../../fonts/Metropolis/stylesheet.css";
+
+:root{
+
+    /* Colores */
+    --clr-primary: #452372;
+    --clr-btn-primary: #9D8FAD;
+    --clr-btn-primary-hover: #FFFFFF;
+
+    /* Border radius */
+
+    --radius: 0.2rem;
+
+    /* Font Size */
+
+    font-size: 16px;
+
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+
+    /* Font family */
+    font-family: "Metropolis", sans-serif;
+
+}
+
+.nav__list{
+    background: var(--clr-primary);
+    box-shadow: 0px 0px 10px #7b7b7b;
+    padding: 1rem 0;
+    width: 6rem;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    z-index: 99;
+}
+
+.nav__item{
+    list-style: none;
+    position: relative;
+    z-index: 99;
+}
+
+.nav__item:first-child{
+    margin-bottom: 1.5rem;
+}
+
+.nav__item::before{
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 1rem;
+    top: -0.25rem;
+    background: var(--clr-primary);
+    color: white;
+    padding: 0.8rem;
+    border-radius: var(--radius);
+    transition: all 150ms ease;
+    opacity: 0;
+    scale: 0;
+    
+}
+
+.nav__item::after{
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    background-color: transparent;
+    left: 5rem;
+    top: 0.6rem;
+    transition: all 150ms ease;
+    transform: rotate(45deg);
+    opacity: 0;
+    scale: 0;
+}
+
+.nav__item:hover::after{
+    opacity: 1;
+    scale: 1;
+    left: 5.1rem;
+    background-color: var(--clr-primary);
+}
+
+.nav__item:hover::before{
+    opacity: 1;
+    scale: 1;
+    left: 5.5rem;
+}
+
+.nav__item img{
+    transition: all 200ms ease-in;
+}
+
+.filter-clr:hover{
+    filter: brightness(0) saturate(100%) invert(97%) sepia(38%) saturate(97%) hue-rotate(200deg) brightness(113%) contrast(100%);
+}
+
+.logo-item:hover{
+    transform: scale(1.05);
+}
+
+/* .filter-clr{
+    filter: brightness(0) saturate(100%) invert(61%) sepia(6%) saturate(1037%) hue-rotate(226deg) brightness(96%) contrast(90%);
+} */
+
