@@ -320,35 +320,7 @@ li:first-child{
     display: none;
 }
 
-@media screen and (max-width: 575.98px){
-    .background-title{
-        font-size: 2rem;
-    }
-
-    .container-top ul{
-        /* margin-top: 2em; */
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 10rem;
-        padding: 0;
-    }
-    
-    .container-top ul li{
-        padding-right: 0rem;
-    }
-    
-    li:first-child{
-        margin-right: 0rem;
-        margin-left: 0rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
-
-}
-
-@media screen and (max-width: 991.98px)  {
+@media screen and (max-width: 1007.98px)  {
     
     .wrapper-main{
         height: 100vh;
