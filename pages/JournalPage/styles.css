@@ -47,14 +47,22 @@ body{
     z-index: 99;
 }
 
+.nav__item__logo{
+    list-style: none;
+    position: relative;
+    margin-bottom: 1.5rem;
+    transition: all 150ms ease;
+}
+
+.logo-item:hover{
+    transition: all 150ms ease;
+    transform: scale(1.05);
+}
+
 .nav__item{
     list-style: none;
     position: relative;
     z-index: 99;
-}
-
-.nav__item:first-child{
-    margin-bottom: 1.5rem;
 }
 
 .nav__item::before{
@@ -105,12 +113,35 @@ body{
 }
 
 .filter-clr:hover{
-    filter: brightness(0) saturate(100%) invert(97%) sepia(38%) saturate(97%) hue-rotate(200deg) brightness(113%) contrast(100%);
+    filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(2%) hue-rotate(359deg) brightness(111%) contrast(101%);
 }
 
-.logo-item:hover{
-    transform: scale(1.05);
+.btn-ellipse{
+    position: relative;
 }
+
+.btn-ellipse::before{
+    content: "";
+    width: 3rem;
+    height: 3rem;
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    left: -0.5rem;
+    top: -2.5rem;
+    z-index: -1;
+    opacity: 0;
+    transition: all 200ms ease-in;
+}
+
+.nav__item a:focus > .btn-ellipse::before{
+    opacity: 1;
+}
+
+.nav__item a:focus > img{
+    filter: brightness(0) saturate(100%) invert(16%) sepia(73%) saturate(1372%) hue-rotate(242deg) brightness(93%) contrast(101%);
+}
+
 
 /* .filter-clr{
     filter: brightness(0) saturate(100%) invert(61%) sepia(6%) saturate(1037%) hue-rotate(226deg) brightness(96%) contrast(90%);
