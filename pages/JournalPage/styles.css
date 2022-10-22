@@ -15,6 +15,9 @@
 
     font-size: 16px;
 
+    /* Ellipse width */
+    --ellipse-width: 3rem;
+
 }
 
 *,
@@ -68,7 +71,7 @@ body{
 .nav__item::before{
     content: attr(data-tooltip);
     position: absolute;
-    left: 1rem;
+    left: calc(50% + 3rem);
     top: -0.25rem;
     background: var(--clr-primary);
     color: white;
@@ -87,7 +90,7 @@ body{
     height: 14px;
     border-radius: 2px;
     background-color: transparent;
-    left: 5rem;
+    left: calc(50% + 5.5rem);
     top: 0.6rem;
     transition: all 150ms ease;
     transform: rotate(45deg);
@@ -98,22 +101,22 @@ body{
 .nav__item:hover::after{
     opacity: 1;
     scale: 1;
-    left: 5.1rem;
+    left: calc(50% + 3.8rem);
     background-color: var(--clr-primary);
 }
 
 .nav__item:hover::before{
     opacity: 1;
     scale: 1;
-    left: 5.5rem;
+    left: calc(50% + 4.2rem);
+}
+
+.nav__item:hover img{
+    filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(2%) hue-rotate(359deg) brightness(111%) contrast(101%);
 }
 
 .nav__item img{
-    transition: all 200ms ease-in;
-}
-
-.filter-clr:hover{
-    filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(2%) hue-rotate(359deg) brightness(111%) contrast(101%);
+    transition: all 500ms ease;
 }
 
 .btn-ellipse{
@@ -122,13 +125,14 @@ body{
 
 .btn-ellipse::before{
     content: "";
-    width: 3rem;
+    
+    width: var(--ellipse-width);
     height: 3rem;
     background: white;
     position: absolute;
     border-radius: 50%;
-    left: -0.5rem;
-    top: -2.5rem;
+    left: calc(50% - var(--ellipse-width)/2);
+    top: calc(50% - 2.6rem);
     z-index: -1;
     opacity: 0;
     transition: all 200ms ease-in;
