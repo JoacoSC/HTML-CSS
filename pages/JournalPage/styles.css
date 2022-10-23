@@ -6,6 +6,9 @@
     --clr-primary: #452372;
     --clr-btn-primary: #9D8FAD;
     --clr-btn-primary-hover: #FFFFFF;
+    --clr-btn-secondary: #6D22D0;
+    --clr-btn-secondary-hover: #6821c6;
+    --clr-btn-secondary-active: #7d37d8;
 
     /* Border radius */
 
@@ -17,6 +20,10 @@
 
     /* Ellipse width */
     --ellipse-width: 3rem;
+
+    /* Svg */
+
+    --btn-add-icon: url(../../imgs/journal/btn-add.svg);
 
 }
 
@@ -36,13 +43,69 @@ body{
 
 }
 
+.content-wrapper{
+    display: grid;
+    grid-template-columns: 120px auto;
+}
+
+.main-welcome{
+    margin-top: 3rem;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.next-consultation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 2rem;
+    margin-top: 3rem;
+}
+
+.btn-spontaneous{
+    appearance: none;
+    position: relative;
+    font-family: "Metropolis", sans-serif;
+    font-size: 0.8rem;
+    background: var(--clr-btn-secondary);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 0.9rem;
+    padding-left: 2.8rem;
+    margin-left: auto;
+    margin-right: 3rem;
+    cursor: pointer;
+    transition: all 150ms ease;
+}
+
+.btn-spontaneous:hover{
+    transform: scale(0.98);
+    background: var(--clr-btn-secondary-hover);
+}
+
+.btn-spontaneous:active{
+    transform: scale(0.96);
+    background: var(--clr-btn-secondary-active);
+}
+
+.btn-spontaneous::before{
+    position: absolute;
+    content: var(--btn-add-icon);
+    top: 0.4rem;
+    left: 0.8rem;
+}
+
+/* *********** Navbar ************ */
+
 .nav__list{
     background: var(--clr-primary);
     box-shadow: 0px 0px 10px #7b7b7b;
     padding: 1rem 0;
     width: 6rem;
-    height: 100vh;
-    position: fixed;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
