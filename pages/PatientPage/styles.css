@@ -16,6 +16,8 @@
 
     /* Svg */
     --arrow-dropdown: url(../../imgs/patient/arrow_drop_down.svg);
+    --weight-icon: url(../../imgs/patient/weight_icon.svg);
+    --stature-icon: url(../../imgs/patient/stature_icon.svg);
 
     /* Animation curve */
     --animation-curve: cubic-bezier(0.34, 1.36, 0.2, 1);
@@ -47,12 +49,163 @@ body{
     grid-template-rows: 1fr auto;
 }
 
+/* ************* Patient card ************** */
+
+/* ************* Patient info ************** */
 .patient-card{
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 10rem;
     margin: 4rem auto 1rem;
+    border: 1px solid #ECEDED;
+    border-radius: 20px;
 }
+
+.patient-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 2rem;
+    border-right: 1px solid #ECEDED;
+    border-radius: 20px 0px 0px 20px;
+    background-image: linear-gradient(to left bottom, #ffc6ff, #ffc3ec, #ffc2da, #ffc3cc, #ffc5c1);
+
+}
+
+.patient-avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 3px solid white;
+    background: #627CE7;
+    font-family: "Metropolis", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: white;
+}
+
+.patient-name{
+    margin-top: 0.8rem;
+    font-family: "Metropolis", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.patient-consultation-time{
+    margin-top: 0.2rem;
+    font-family: "Metropolis", sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+/* ************* Patient info ************** */
+
+/* **************** Patient weight ****************** */
+
+.patient-weight{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 0 4rem 0 2rem;
+    border-right: 1px solid #ECEDED;
+}
+
+.weight-icon{
+    position: relative;
+    width: 43px;
+    height: 43px;
+}
+
+.weight-icon svg{
+    margin-top: 0.3rem;
+    padding-bottom: 0;
+    padding-bottom: 0.4rem;
+}
+
+.weight-title{
+    margin-top: 0.8rem;
+    font-family: "Metropolis", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.weight{
+    display: flex;
+    align-items: flex-end;
+    margin-top: 0.7rem;
+}
+.weight-value{
+    font-family: "Metropolis", sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+.weight-kg{
+    margin: 0.3rem 0.3rem;
+    font-family: "Metropolis", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* **************** Patient weight ****************** */
+
+/* **************** Patient stature ****************** */
+
+.patient-stature{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 0 4rem 0 2rem;
+}
+
+.stature-icon{
+    position: relative;
+    width: 43px;
+    height: 43px;
+}
+
+.stature-icon svg{
+    margin-top: 0.3rem;
+    padding-bottom: 0;
+    padding-bottom: 0.4rem;
+}
+
+.stature-title{
+    margin-top: 0.8rem;
+    font-family: "Metropolis", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.stature{
+    display: flex;
+    align-items: flex-end;
+    margin-top: 0.7rem;
+}
+.stature-value{
+    font-family: "Metropolis", sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+.stature-cm{
+    margin: 0.3rem 0.3rem;
+    font-family: "Metropolis", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* **************** Patient stature ****************** */
+
+/* ************* Patient card ************** */
 
 .accordion-container{
     display: grid;
@@ -79,6 +232,7 @@ body{
     font-weight: 500;
     color: white;
     transition: all 150ms ease;
+    cursor: pointer;
 }
 
 .accordion-label::after{
